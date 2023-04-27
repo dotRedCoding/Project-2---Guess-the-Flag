@@ -90,6 +90,8 @@ class ViewController: UIViewController {
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
         titleLabel.text = countries[correctAnswer].uppercased()
+        subtitleLabel.text = "Question \(questionsAsked)"
+        questionsAsked += 1
     }
     
     // MARK: - Button Tap
@@ -109,13 +111,21 @@ class ViewController: UIViewController {
             score -= 1
         }
         
-        questionsAsked += 1
-        subtitleLabel.text = "Question \(questionsAsked)"
         scoreLabel.text = "Score: \(score)"
         
         // closure - pop up alert
-        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion)) // add button to the alert, no parenthesis on the ask question
+        let ac = UIAlertController(title: title, message: "Your score is \(score) out of 10", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Continue", style: .default, handler: askQuestion) // add button to the alert, no parenthesis on the ask question
+        let action2 = UIAlertAction(title: "Thank you", style: .destructive, handler: askQuestion)
+        
+        if questionsAsked > 10 {
+            ac.addAction(action2)
+            questionsAsked = 1
+            score = 0
+            scoreLabel.text = "Score: \(score)"
+        } else {
+            ac.addAction(action1)
+        }
         
         present(ac, animated: true)
     }
