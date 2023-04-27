@@ -16,32 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lz-vP-Wgg">
-                                <rect key="frame" x="107" y="100" width="200" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lz-vP-Wgg">
+                                <rect key="frame" x="95" y="100" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="uk"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-q3-z7I">
-                                <rect key="frame" x="107" y="230" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-q3-z7I">
+                                <rect key="frame" x="95" y="244" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="uk"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-wk-0xm">
-                                <rect key="frame" x="107" y="360" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-wk-0xm">
+                                <rect key="frame" x="95" y="388" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="uk"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1lz-vP-Wgg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DmP-fv-mYJ"/>
+                            <constraint firstItem="6dZ-wk-0xm" firstAttribute="centerX" secondItem="ROn-q3-z7I" secondAttribute="centerX" id="F9E-Dt-f84"/>
                             <constraint firstItem="1lz-vP-Wgg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Kgm-SZ-LwD"/>
+                            <constraint firstItem="6dZ-wk-0xm" firstAttribute="top" secondItem="ROn-q3-z7I" secondAttribute="bottom" constant="30" id="W9X-nf-1Uu"/>
+                            <constraint firstItem="ROn-q3-z7I" firstAttribute="top" secondItem="1lz-vP-Wgg" secondAttribute="bottom" constant="30" id="ZDJ-ii-wkh"/>
+                            <constraint firstItem="ROn-q3-z7I" firstAttribute="centerX" secondItem="1lz-vP-Wgg" secondAttribute="centerX" id="aef-AD-j3E"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DJB-c4-bph"/>
+                    <connections>
+                        <outlet property="button1" destination="1lz-vP-Wgg" id="8Z6-Iv-tFY"/>
+                        <outlet property="button2" destination="ROn-q3-z7I" id="dM4-JU-19x"/>
+                        <outlet property="button3" destination="6dZ-wk-0xm" id="o3d-61-YRU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,6 +74,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="uk" width="200" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
