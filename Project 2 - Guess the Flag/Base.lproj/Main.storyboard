@@ -40,6 +40,12 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dyj-hA-bUj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds2-bz-aBc">
+                                <rect key="frame" x="186" y="552" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,8 +54,10 @@
                             <constraint firstItem="6dZ-wk-0xm" firstAttribute="centerX" secondItem="ROn-q3-z7I" secondAttribute="centerX" id="F9E-Dt-f84"/>
                             <constraint firstItem="1lz-vP-Wgg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Kgm-SZ-LwD"/>
                             <constraint firstItem="6dZ-wk-0xm" firstAttribute="top" secondItem="ROn-q3-z7I" secondAttribute="bottom" constant="30" id="W9X-nf-1Uu"/>
+                            <constraint firstItem="ds2-bz-aBc" firstAttribute="centerX" secondItem="6dZ-wk-0xm" secondAttribute="centerX" id="YEk-MC-sxE"/>
                             <constraint firstItem="ROn-q3-z7I" firstAttribute="top" secondItem="1lz-vP-Wgg" secondAttribute="bottom" constant="30" id="ZDJ-ii-wkh"/>
                             <constraint firstItem="ROn-q3-z7I" firstAttribute="centerX" secondItem="1lz-vP-Wgg" secondAttribute="centerX" id="aef-AD-j3E"/>
+                            <constraint firstItem="ds2-bz-aBc" firstAttribute="top" secondItem="6dZ-wk-0xm" secondAttribute="bottom" constant="50" id="jIr-GG-hTO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DJB-c4-bph"/>
@@ -57,6 +65,7 @@
                         <outlet property="button1" destination="1lz-vP-Wgg" id="8Z6-Iv-tFY"/>
                         <outlet property="button2" destination="ROn-q3-z7I" id="dM4-JU-19x"/>
                         <outlet property="button3" destination="6dZ-wk-0xm" id="o3d-61-YRU"/>
+                        <outlet property="scoreLabel" destination="ds2-bz-aBc" id="y3t-X3-H3l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

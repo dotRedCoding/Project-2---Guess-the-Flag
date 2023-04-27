@@ -5,21 +5,50 @@
 //  Created by Jared Infantino on 2023-04-23.
 //
 
+// Challenges
+// 1. play score in nav bar - done
+// 2. how many questions have been asked out of 10
+// 3. if answer is wrong tell them the correct answer in the alert message
+
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - PROPERTIES
+    
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
+    @IBOutlet var scoreLabel: UILabel!
     
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var questionsAsked = 1
+    var flagSelected = 0
+    let titleLabel = UILabel()
+    let subtitleLabel = UILabel()
     
+    
+    // MARK: - TITLE PROPERTIES
+    lazy var titleStackView: UIStackView = {
+            titleLabel.textAlignment = .center
+            titleLabel.text = "Title"
+            subtitleLabel.textAlignment = .center
+            subtitleLabel.text = "Question: 1"
+            subtitleLabel.font = .italicSystemFont(ofSize: 12)
+            let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+            stackView.axis = .vertical
+            return stackView
+        }()
+    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.titleView = titleStackView
         
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+        scoreLabel.text = "Score: "
         
         // MARK: - Button configuration
         
@@ -60,7 +89,7 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = countries[correctAnswer].uppercased()
+        titleLabel.text = countries[correctAnswer].uppercased()
     }
     
     // MARK: - Button Tap
@@ -70,14 +99,19 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
+        flagSelected = sender.tag
         
         if sender.tag == correctAnswer {
             title = "Correct!"
             score += 1
         } else {
-            title = "Incorrect!"
+            title = "Incorrect!, thats the flag for \(countries[flagSelected].uppercased())"
             score -= 1
         }
+        
+        questionsAsked += 1
+        subtitleLabel.text = "Question \(questionsAsked)"
+        scoreLabel.text = "Score: \(score)"
         
         // closure - pop up alert
         let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
