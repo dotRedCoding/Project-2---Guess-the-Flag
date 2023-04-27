@@ -20,9 +20,26 @@ class ViewController: UIViewController {
         
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
+        // MARK: - Button configuration
+        
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
         button3.layer.borderWidth = 1
+        
+        button1.configuration?.contentInsets.bottom = 0
+        button1.configuration?.contentInsets.leading = 0
+        button1.configuration?.contentInsets.top = 0
+        button1.configuration?.contentInsets.trailing = 0
+        
+        button2.configuration?.contentInsets.bottom = 0
+        button2.configuration?.contentInsets.leading = 0
+        button2.configuration?.contentInsets.top = 0
+        button2.configuration?.contentInsets.trailing = 0
+        
+        button3.configuration?.contentInsets.bottom = 0
+        button3.configuration?.contentInsets.leading = 0
+        button3.configuration?.contentInsets.top = 0
+        button3.configuration?.contentInsets.trailing = 0
         
         button1.layer.borderColor = UIColor.lightGray.cgColor // we can put the UIcolor directly into the bored because it belongs to a CALayer
         button2.layer.borderColor = UIColor.lightGray.cgColor // we add .cgColor to convert it so it works
