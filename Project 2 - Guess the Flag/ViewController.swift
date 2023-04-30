@@ -116,7 +116,7 @@ class ViewController: UIViewController {
         // closure - pop up alert
         let ac = UIAlertController(title: title, message: "Your score is \(score) out of 10", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "Continue", style: .default, handler: askQuestion) // add button to the alert, no parenthesis on the ask question
-        let action2 = UIAlertAction(title: "Thank you", style: .destructive, handler: askQuestion)
+        let action2 = UIAlertAction(title: "Play Again?", style: .destructive, handler: askQuestion)
         
         if questionsAsked > 10 {
             ac.addAction(action2)
